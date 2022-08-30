@@ -1,0 +1,65 @@
+.forezero {
+    background: $theme-color;
+    padding-top: 300px;
+    &__content {
+        @extend %p-30;
+        background: $white-color;
+        @extend %p-rel;
+        &::after {
+            @extend %p-abs;
+            background: url(../../assets/images/404.png);
+            width: 214px;
+            height: 300px;
+            top: -265px;
+            left: 50%;
+            -webkit-transform: translateX(-50%);
+            -ms-transform: translateX(-50%);
+            transform: translateX(-50%);
+        }
+        h2 {
+            @include font-size(160px);
+            @extend %text-font;
+            color: $theme-color;
+        }
+        p {
+            letter-spacing: 5px;
+            @extend %text-bold;
+            @extend %text-uppercase;
+            @extend %mb-5;
+            @include font-size(30px);
+        }
+    }
+    &__form {
+        form {
+            @extend %flex;
+            @extend %justify-center;
+            @extend %my-30;
+            border: 1px solid $border-color;
+            max-width: 400px;
+            margin: 30px auto;
+            @include add-prefix(border-radius, (3px));
+            input {
+                @extend %mb-0;
+                @extend %border-none;
+                width: calc(100% - 60px);
+            }
+            button {
+                line-height: 50px;
+                width: 60px;
+                @extend %p-0;
+                background: transparent;
+                border-left: 1px solid $border-color;
+            }
+        }
+        .default-btn {
+            &:hover {
+                span {
+                    color: $white-color;
+                }
+            }
+            &::before {
+                background: $theme-color3;
+            }
+        }
+    }
+}

@@ -1,0 +1,74 @@
+// -----------------------------------------------------------------------------
+// When having several themes, this file contains everything related to the
+// default one.
+// -----------------------------------------------------------------------------
+
+
+
+
+.error-404 {
+    background: #f1c152;
+    padding-top: 250px;
+    padding-bottom: 100px;
+}
+.error-404 .heading-text {
+    background-color: #fff;
+    padding: 50px;
+    position: relative;
+    margin-top: 100px;
+}
+.error-404 .heading-text h1.page-title {
+    text-align: center;
+    font-size: 10em;
+    font-family: roboto;
+    font-weight: bolder;
+    color: #F1C152;
+}
+.error-404 .heading-text:before {
+    content: "";
+    position: absolute;
+    background: url(../../assets/images/404.png);
+    width: 214px;
+    height: 300px;
+    top: -265px;
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    transform: translateX(-50%);
+}
+.error-404 .heading-text p {
+    font-size: 32px;
+    font-weight: bold;
+    font-family: roboto;
+    letter-spacing: 5px;
+}
+.error-404 .heading-text span {
+    display: block;
+    padding-bottom: 30px;
+}
+.error-404 .heading-text .search-field {
+    border: 1px solid;
+    border-radius: 0;
+    padding: 5px 15px;
+    border-color: #ccc;
+}
+.error-404 .heading-text .search-submit {
+    display: none;
+}
+.error-404 .heading-text .add-on {
+    background: none;
+    position: absolute;
+    right: 15px;
+    top: 4px;
+    outline: none;
+    box-shadow: none;
+    border: none;
+}
+.error-404 .heading-text .go-back a {
+    border: 1px solid #F1C152;
+    padding: 5px 10px;
+    display: table;
+    color: #F1C152;
+    margin: 30px auto;
+    font-weight: bold;
+}

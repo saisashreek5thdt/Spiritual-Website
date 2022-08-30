@@ -1,0 +1,97 @@
+.location {
+    &__left {
+        @extend %h-100;
+        @include breakpoint(max-lg) {
+            height: 400px;
+        }
+    }
+    &__map {
+        @extend %h-100;
+        iframe {
+            @extend %w-100;
+            @extend %h-100;
+        }
+    }
+    &__right {
+        @extend %pl-20;
+        background: $title-color;
+        @include breakpoint(lg) {
+            padding-left: 50px;
+        }
+    }
+    &__info {
+        &-top {
+            @extend %mb-40;
+            .section__header {
+                h2 {
+                    color: $white-color;
+                    @include font-size(30px);
+                }
+            }
+            .section__wrapper {
+                @extend %flex;
+                @extend %align-items-center;
+                .location {
+                    &__info {
+                        &-thumb {
+                            @extend %mr-20;
+                            img {
+                                @include add-prefix(border-radius, (100%));
+                            }
+                        }
+                        &-content {
+                            h6 {
+                                color: $white-color;
+                                @extend %text-font;
+                                @extend %mb-0;
+                            }
+                            span {}
+                            ul {
+                                @extend %mt-15;
+                                li {
+                                    b {
+                                        @extend %mr-5;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        
+        &-bottom {
+            .section__header {
+                h2 {
+                    color: $white-color;
+                    @include font-size(30px);
+                }
+            }
+            .section__wrapper {
+                .location {
+                    &__info {
+                        &-list {
+                            ul {
+                                li {
+                                    @extend %flex;
+
+                                }
+                            }
+                        }
+                        &-left {
+                            @extend %mr-5;
+                            i,svg {
+                                color: $theme-color;
+                                @extend %mr-5;
+                            }
+                        }
+                        &-right {
+                            width: calc(100% - 30px);
+                            p {}
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,86 @@
+.piller {
+    &__area {
+        @extend %flex;
+        @extend %justify-center;
+        gap: 30px;
+    }
+    &__shape {
+        @extend %p-abs;
+        width: inherit;
+        height: 150px;
+        left: 0;
+        bottom: 0;
+        border: 2px dashed $border-color;
+    }
+    &__item {
+        &:nth-child(2) {
+            .piller {
+                &__inner {
+                    background: #8224e3;
+                }
+            }
+        }
+        &:nth-child(3) {
+            .piller {
+                &__inner {
+                    background: #81d742;
+                }
+            }
+        }
+        &:nth-child(4) {
+            .piller {
+                &__inner {
+                    background: #dd9933;
+                }
+            }
+        }
+        &:nth-child(5) {
+            .piller {
+                &__inner {
+                    background: #4a7774;
+                }
+            }
+        }
+    }
+    &__inner {
+        width: 130px;
+        height: 130px;
+        background: #8f4296;
+        @extend %text-center;
+        @extend %flex;
+        @extend %p-rel;
+        flex-direction: column;
+        @extend %justify-center;
+        @extend %align-items-center;
+        @include add-prefix(border-radius, (100%));
+        @include add-prefix(transition, (all .3s ease));
+        &::after {
+            @extend %pos-center;
+            @extend %w-100;
+            @extend %h-100;
+            opacity: 0;
+            border: 2px solid $theme-color3;
+            @include add-prefix(border-radius, (100%));
+            @include add-prefix(transition, (all .3s ease));
+        }
+        &:hover {
+            background: $theme-color3 !important;
+            &::after {
+                opacity: 1;
+                width: calc(100% + 20px);
+                height: calc(100% + 20px);
+            }
+        }
+    }
+    &__thumb {
+        width: 50px;
+        margin: 0 auto 10px;
+    }
+    &__content {
+        p {
+            @extend %mb-0;
+            @extend %text-bold;
+            color: $white-color;
+        }
+    }
+}

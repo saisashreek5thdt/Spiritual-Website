@@ -1,0 +1,142 @@
+.cause {
+    background-blend-mode: overlay;
+    &__top {
+        @extend %mb-40;
+    }
+    &__item {}
+    &__inner {
+        width: 190px;
+        height: 190px;
+        @extend %text-center;
+        @extend %flex;
+        @extend %justify-center;
+        flex-direction: column;
+        border: 2px solid $theme-color;
+        margin: 0 auto;
+        background: rgba($white-color, $alpha: .2);
+        @include add-prefix(border-radius, (100%));
+    }
+    &__content {
+        h3 {
+            @extend %text-font;
+            color: $theme-color;
+        }
+        h6 {
+            @extend %mb-0;
+            color: $white-color;
+        }
+    }
+    &__bottom {
+        @extend %mt-30;
+    }
+    &__bars {
+        @include breakpoint(lg) {
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        h4 {
+            @extend %text-font;
+            color: $white-color;
+            @extend %mb-0;
+            span {
+                color: $theme-color;
+            }
+        }
+    }
+    &-style2 {
+        .cause {
+            &__inner {
+                width: auto;
+                height: auto;
+                @extend %border-none;
+                @extend %text-left;
+                @include add-prefix(border-radius, (0));
+                &:hover {
+                    .cause {
+                        &__thumb {
+                            img {
+                                @include add-prefix(transform, (scale(1.2)));
+                            }
+                        }
+                        &__content {
+                            h5 {
+                                color: $theme-color;
+                            }
+                        }
+                    }
+                }
+            }
+            &__thumb {
+                @extend %of-hidden;
+                img {
+                    @extend %w-100;
+                }
+            }
+            &__content {
+                @extend %pt-30;
+                h5 {
+                    @extend %text-font;
+                    @extend %text-1;
+                }
+                h6 {
+                    color: $title-color;
+                    @extend %text-font;
+                    @extend %mb-10;
+                }
+                .donaterange__bars {
+                    background: $title-color;
+                    height: 6px;
+                    margin: 15px 0;
+                }
+            }
+        }
+    }
+    &-single {
+        .cause {
+            &__inner {
+                &:hover {
+                    .cause {
+                        &__thumb {
+                            img {
+                                @include add-prefix(transform, (scale(1)));
+                            }
+                        }
+                    }
+                }
+            }
+            &__content {
+
+            }
+            &__bars {
+                @include breakpoint(lg) {
+                    max-width: 100%;
+                }
+            }
+        }
+    }
+}
+
+.donaterange {
+    @extend %text-center;
+    h3 {
+        @include font-size(35px);
+        color: $white-color;
+        @extend %text-regular;
+        span {
+            color: $theme-color;
+        }
+    }
+    &__bars {
+        height: 20px;
+        background: $white-color;
+        @extend %flex;
+        @extend %my-30;
+        @include add-prefix(border-radius, (12px));
+    }
+    &__bar {
+        height: 100%;
+        background: $theme-color;
+        border-top-left-radius: 12px;
+        border-bottom-left-radius: 12px;
+    }
+}

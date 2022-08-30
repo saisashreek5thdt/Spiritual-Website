@@ -1,0 +1,164 @@
+.sermon {
+    &__item {}
+    &__inner {
+        @extend %flex;
+        @extend %align-items-center;
+        @extend %p-30;
+        @extend %text-center;
+        background: $white-color;
+        border: 1px solid $border-color;
+        @include add-prefix(border-radius, (4px));
+        @include breakpoint(sm) {
+            text-align: left;
+        }
+        &:hover {
+            .sermon {
+                &__thumb {
+                    img {
+                        @include add-prefix(transform, scale(1.2));
+                    }
+                }
+                &__content {
+                    h6 {
+                        color: $theme-color;
+                    }
+                }
+            }
+        }
+    }
+    &__thumb {
+        @extend %of-hidden;
+        @include add-prefix(border-radius, (100%));
+        width: 150px;
+        margin: 0 auto 15px;
+        @include breakpoint(sm) {
+            margin-bottom: 0;
+        }
+        img {
+            @extend %w-100;
+        }
+    }
+    &__content {
+        @extend %w-100;
+        @include breakpoint(sm) {
+            width: calc(100% - 150px);
+            padding-left: 30px;
+        }
+        h6 {
+            @extend %text-font;
+            @extend %text-2;
+            @extend %mb-10;
+        }
+        &-metapost {
+            @extend %flex;
+            @extend %mb-10;
+            @include breakpoint(max-sm) {
+                justify-content: center;
+            }
+            li {
+                @extend %pr-15;
+                i, svg {
+                    @extend %mr-5;
+                }
+            }
+        }
+        &-social {
+            @extend %flex;
+            @include breakpoint(max-sm) {
+                justify-content: center;
+            }
+            li {
+                a {
+                    @extend %pr-10;
+                    @extend %d-inline-block;
+                }
+            }
+        }
+    }
+    &-single {
+        .sermon {
+            &__inner {
+                @extend %p-0;
+                background: transparent;
+                @extend %border-none;
+                @extend %text-left;
+                &:hover {
+                    .sermon {
+                        &__thumb {
+                            img {
+                                @include add-prefix(transform, scale(1));
+                            }
+                        }
+                        &__content {
+                            h6 {
+                                color: $title-color;
+                            }
+                        }
+                    }
+                }
+            }
+            &__thumb {
+                @extend %w-100;
+                @include add-prefix(border-radius, (0));
+                img {}
+                &-metapost {
+                    @extend %flex;
+                    @extend %justify-between;
+                    @extend %pt-20;
+                    @extend %mb-20;
+                    border-bottom: 1px solid $border-color;
+                }
+            }
+            &__content {
+                @extend %w-100;
+                @extend %p-0;
+                h3 {
+                    @extend %text-font;
+                    @extend %text-2;
+                    @extend %text-capitalize;
+                }
+            }
+        }
+        .blog {
+            &__comments {
+                .section__header {
+                    h2 {
+                        @include font-size(30px);
+                        @extend %text-medium;
+                    }
+                }
+                &-details {
+                    ul  {
+                        li {
+
+                        }
+                    }
+                }
+                &-thumb {
+                    img {
+                        @include add-prefix(border-radius, (100%));
+                    }
+                }
+                &-content {
+                    h6 {}
+                    span {
+                        @extend %d-block;
+                        @extend %mb-10;
+                    }
+                }
+                &-edit {
+                    @extend %mb-10;
+                    @extend %d-inline-block;
+                }
+            }
+            &__respond {
+                .section__header {
+                    h2 {
+                        @include font-size(30px);
+                        @extend %text-medium;
+                    }
+                }
+            }
+        }
+    }
+}

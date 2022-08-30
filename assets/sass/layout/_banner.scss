@@ -1,0 +1,116 @@
+.banner {
+    background-size: cover;
+    background-position: center right;
+    padding: 150px 0;
+    @include breakpoint(md) {
+        padding: 200px 0;
+        background-position: center;
+    }
+    @include breakpoint(lg) {
+        @include breakpoint(max-xl) {
+            // background-size: 140% 130%;
+        }
+    }
+    @include breakpoint(md) {
+        @include breakpoint(max-lg) {
+            background-size: cover;
+            background-position: right;
+        }
+    }
+    &__content {
+        @include breakpoint(lg) {
+            max-width: 50%;
+        }
+        h2 {
+            @include add-prefix(transform, (translateY(450px)));
+            @include add-prefix(transition, (all 1s ease));
+            font-family: $text-font;
+            @extend %text-extabold;
+            @include font-size(60px);
+        }
+        .default-btn {
+            padding: 0 2rem;
+            @include add-prefix(transform, (translateY(350px)));
+            @include add-prefix(transition, (all 1s ease));
+            &::after {
+                background-color: rgba($white-color, $alpha: .9);
+            }
+        }
+        p {
+            text-transform: capitalize;
+            @extend %mb-30;
+            @extend %pr-30;
+            line-height: 30px;
+            @include add-prefix(transform, (translateY(350px)));
+            @include add-prefix(transition, (all 1s ease));
+            @include font-size(18px);
+        }
+    }
+    &-style2 {
+        .banner {
+            &__content {
+                h2 {
+                    color: $white-color;
+                }
+                .default-btn {}
+                p {
+                    color: rgba($white-color, $alpha: .9);
+                }
+            }
+        }
+    }
+    &-style3 {
+        .banner {
+            &__content {
+                &.text-lg-center {
+                    h2 {
+                        color: $white-color;
+                    }
+                    .default-btn {}
+                    p {
+                        color: rgba($white-color, $alpha: .9);
+                    }
+                }
+            }
+        }
+    }
+}
+.swiper-slide-active, .swiper-slide-duplicate-active {
+    .banner {
+        &__content {
+            h2 {
+                @include add-prefix(transform, (translateY(0px)));
+            }
+            .default-btn {
+                @include add-prefix(transform, (translateY(0px)));
+            }
+            p {
+                @include add-prefix(transform, (translateY(0px)));
+            }
+        }
+    }
+}
+
+
+
+
+
+// page header section start here
+.pageheader {
+    @extend %py-30;
+    &__area {
+        @extend %flex;
+        @extend %align-items-center;
+        @extend %justify-between;
+    }
+    &__left {
+        h3 {
+            @extend %mb-0;
+        }
+    }
+    &__right {
+        .breadcrumb {
+            @extend %mb-0;
+        }
+    }
+}

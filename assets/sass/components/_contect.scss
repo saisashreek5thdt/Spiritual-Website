@@ -1,0 +1,84 @@
+.contact {
+    &__form {
+        form {
+            input, textarea {
+                @extend %p-20;
+                @extend %mb-20;
+                border: 1px solid $border-color;
+                @include add-prefix(border-radius, (4px));
+            }
+            input {
+                @extend %w-100;
+                @include breakpoint(sm) {
+                    width: calc(100% / 2 - 15px);
+                }
+            }
+            textarea {
+                @extend %w-100;
+            }
+            .default-btn {
+                @extend %border-none;
+            }
+        }
+        .form-message {
+            @extend %m-0;
+            @extend %text-center;
+            &.error {
+                @extend %mt-30;
+                color: red;
+            }
+            &.success {
+                @extend %mt-30;
+                color: green;
+            }
+        }
+    }
+}
+
+form {
+    input,
+    textarea {
+        border: 1px solid $border-color;
+        padding: 15px;
+        color: $title-color;
+        outline: none;
+        &:focus {
+            // outline: $theme-color3;
+            border-color: $theme-color;
+        }
+    }
+    input {
+        height: 50px;
+        margin-bottom: 30px;
+        @extend %w-100;
+        @include breakpoint (sm) {
+            width: calc(100% / 2 - 15px);
+        }
+    }
+    textarea {
+        margin-bottom: 35px;
+        @extend %w-100;
+    }
+    button {
+        @extend %c-pointer;
+        @extend %border-none;
+        // &.default-btn {
+        //     padding: 0px 30px;
+        //     border: none;
+        //     outline: none;
+        //     line-height: 35px;
+        //     border: 2px solid $theme-color3;
+        //     background: transparent !important;
+        //     color: $theme-color3;
+        //     @include font-size(14px);
+        //     &::before {
+        //         background: $theme-color3 !important;
+        //     }
+        //     &:hover {
+        //         span {
+        //             color: $white-color;
+        //         }
+        //     }
+        // }
+    }
+}

@@ -1,0 +1,126 @@
+
+.footer {
+    &__top {
+        background: $title-color;
+        .section__header {
+            h2 {
+                color: $white-color;
+                @include font-size(30px);
+            }
+        }
+    }
+    &__about {
+        &-thumb {
+            @extend %mb-20;
+        }
+        &-content {
+            p {
+                @extend %mb-0;
+            }
+        }
+    }
+    &__tags {
+        ul {
+            @extend %flex;
+            li {
+                @extend %m-5;
+                a {
+                    padding: 5px 10px;
+                    color: $title-color;
+                    background: $white-color;
+                    @extend %d-inline-block;
+                    @include font-size(14px);
+                    @include add-prefix(border-radius, (4px));
+                    &:hover {
+                        background: $theme-color;
+                    }
+                }
+            }
+        }
+    }
+    &__post {
+        &-item {
+            &:last-child {
+                .footer__post {
+                    &-inner {
+                        @extend %mb-0;
+                    }
+                }
+            }
+        }
+        &-inner {
+            @extend %flex;
+            @extend %mb-15;
+            &:hover {
+                .footer {
+                    &__post {
+                        &-thumb {
+                            img {
+                                @include add-prefix(transform, (scale(1.2)));
+                            }
+                        }
+                        &-content {
+                            h6 {
+                                color: $theme-color;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        &-thumb {
+            width: 70px;
+            @extend %of-hidden;
+        }
+        &-content {
+            width: calc(100% - 70px);
+            padding-left: 15px;
+            h6 {
+                color: rgba($white-color, $alpha: .7);
+                @extend %text-font;
+                @extend %text-capitalize;
+                @extend %text-1;
+                @include font-size(14px);
+            }
+        }
+    }
+    &__links {
+        ul {
+            li {
+                a {
+                    @extend %py-5;
+                    @extend %d-inline-block;
+                }
+            }
+        }
+    }
+    &__bottom {
+        padding: 50px 0;
+        &-area {}
+        &-logo {
+            @extend %mb-30;
+        }
+        &-content {
+            p {
+                @extend %mb-0;
+            }
+        }
+    }
+    &__social {
+        ul {
+            @extend %flex;
+            @extend %justify-center;
+            @include breakpoint(lg) {
+                justify-content: flex-end;
+            }
+            li {
+                a {
+                    @extend %p-10;
+                    &:hover {
+                        color: $theme-color;
+                    }
+                }
+            }
+        }
+    }
+}

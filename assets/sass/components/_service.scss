@@ -1,0 +1,202 @@
+.service {
+    &__item {
+        &:last-child {
+            .service {
+                &__inner {
+                    @extend %mb-0;
+                }
+            }
+        }
+    }
+    &__inner {
+        @extend %mb-30;
+        @include breakpoint(max-sm) {
+            text-align: center;
+        }
+        &:hover {
+            .service {
+                &__icon {
+                    background: $theme-color3 !important;
+                    &::after {
+                        border-color: $theme-color3 !important;
+                        width: calc(100% + 20px);
+                        height: calc(100% + 20px);
+                    }
+                }
+                &__content {
+                    h5 {
+                        color: $theme-color3 ;
+                    }
+                }
+            }
+        }
+    }
+    &__icon {
+        width: 80px;
+        height: 80px;
+        line-height: 80px;
+        @include font-size(30px);
+        color: $white-color;
+        @extend %text-center;
+        background: $ash-color;
+        @include add-prefix(border-radius, (100%));
+        @extend %p-rel;
+        @extend %mb-20;
+        @include add-prefix(transition, (all .3s ease));
+        @include breakpoint(max-sm) {
+            margin: 0 auto 15px;
+        }
+        &::after {
+            @extend %pos-center;
+            width: calc(100% + 10px);
+            height: calc(100% + 10px);
+            border: 2px solid $ash-color;
+            @include add-prefix(border-radius, (100%));
+            @include add-prefix(transition, (all .3s ease));
+        }
+        @include breakpoint(lg) {
+            position: absolute;
+        }
+        i, svg {}
+    }
+    &__content {
+        h5 {
+            @extend %mb-5;
+            @extend %text-font;
+            @include add-prefix(transition, (all .3s ease));
+            @include font-size(20px);
+        }
+        p {
+            @extend %mb-0;
+            @include breakpoint(lg) {
+                @include breakpoint(max-xl) {
+                    display: -webkit-box; 
+                    -webkit-line-clamp: 3; 
+                    -webkit-box-orient: vertical; 
+                    overflow: hidden; 
+                    text-overflow: ellipsis;
+                }
+            }
+        }
+    }
+    &__center {
+        width: 260px;
+        height: 260px;
+        margin: 0 auto;
+        border: 2px solid $border-color;
+        @include add-prefix(border-radius, (100%));
+        @extend %flex;
+        flex-direction: column;
+        @extend %justify-center;
+        @extend %align-items-center;
+        @include breakpoint(lg) {
+            @include breakpoint(max-xl) {
+                width: 380px;
+                height: 380px;
+            }
+        }
+        @include breakpoint(xl) {
+            width: 460px;
+            height: 460px;
+        }
+
+    }
+    &__text {
+        width: 150px;
+        height: 150px;
+        margin: 0 auto;
+        background: $title-color;
+        @extend %flex;
+        flex-direction: column;
+        @extend %justify-center;
+        @extend %align-items-center;
+        @extend %p-rel;
+        @include add-prefix(border-radius, (100%));
+        &::after, &::before {
+            @extend %pos-center;
+            @include add-prefix(border-radius, (100%));
+            background: rgba($ash-color, $alpha: .3);
+            z-index: -1;
+        }
+        &::before {
+            width: calc(100% + 10px);
+            height: calc(100% + 10px);
+        }
+        &::after {
+            width: calc(100% + 20px);
+            height: calc(100% + 20px);
+        }
+        p {
+            @extend %mb-0;
+            color: $white-color;
+        }
+        h3 {
+            @extend %mb-0;
+            color: $white-color;
+        }
+        h6 {
+            @extend %mb-0;
+            @extend %text-font;
+            color: $white-color;
+        }
+    }
+    &__left {
+        @extend %p-rel;
+        @include breakpoint(lg) {
+            text-align: right;
+            .service {
+                &__icon {
+                    right: -185px;
+                    background: #8224e3;
+                }
+                &__item {
+                    &:nth-child(2) {
+                        .service {
+                            &__icon {
+                                right: -120px;
+                                background: #8f4296;
+                            }
+                        }
+                    }
+                    &:nth-child(3) {
+                        .service {
+                            &__icon {
+                                right: -155px;
+                                background: #dd9933;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    &__right {
+        @extend %p-rel;
+        @include breakpoint(lg) {
+            .service {
+                &__icon {
+                    left: -185px;
+                    background: #4a7774;
+                }
+                &__item {
+                    &:nth-child(2) {
+                        .service {
+                            &__icon {
+                                left: -120px;
+                                background: $theme-color;
+                            }
+                        }
+                    }
+                    &:nth-child(3) {
+                        .service {
+                            &__icon {
+                                left: -155px;
+                                background: $theme-color2;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

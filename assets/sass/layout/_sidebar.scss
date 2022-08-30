@@ -1,0 +1,188 @@
+
+.sidebar {
+    .section__header {
+        @extend %mb-30;
+        h2 {
+            @include font-size(32px);
+            color: #686664;
+            @extend %text-medium;
+        }
+    }
+    &__info {
+        &-list {
+            li {
+                @extend %flex;
+                @extend %py-5;
+            }
+        }
+        &-left {
+            @extend %mr-10;
+            color: $theme-color;
+        }
+        &-right {
+            width: calc(100% - 30px);
+        }
+    }
+    &__search {
+        @extend %mb-40;
+        form {
+            border: 1px solid $border-color;
+            background: $white-color;
+            @include add-prefix(border-radius, (3px));
+            input {
+                width: calc(100% - 40px);
+                background: transparent;
+                @extend %border-none;
+                @extend %mb-0;
+            }
+            button {
+                width: 36px;
+                height: 50px;
+                background: transparent;
+            }
+        }
+    }
+    &__tab {
+        @extend %mb-30;
+        ul {
+            li {
+                .nav-link {
+                    @extend %text-capitalize;
+                    color: rgba($title-color, $alpha: .2);
+                    &.active {
+                        color: $theme-color;
+                    }
+                }
+            }
+        }
+        .tab-content {
+            .footer {
+                &__post {
+                    &-item {
+                        &:last-child {
+                            .footer__post {
+                                &-inner {
+                                    @extend %mb-0;
+                                    border-bottom: none;
+                                }
+                            }
+                        }
+                    }
+                    &-inner {
+                        @extend %flex;
+                        @extend %mb-0;
+                        @extend %py-20;
+                        border-bottom: 1px solid $border-color;
+                        &:hover {
+                            .footer {
+                                &__post {
+                                    &-thumb {
+                                        img {
+                                            @include add-prefix(transform, (scale(1.2)));
+                                        }
+                                    }
+                                    &-content {
+                                        h6 {
+                                            color: $theme-color;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    &-thumb {}
+                    &-content {
+                        width: calc(100% - 70px);
+                        padding-left: 15px;
+                        h6 {
+                            color: $title-color;
+                            @include font-size(14px);
+                        }
+                    }
+                }
+            }
+            .blog {
+                &__comments {
+                    &-details {
+                        @extend %my-10;
+                        ul {
+                            li {
+                                @extend %py-10;
+                                ul {
+                                    @extend %m-0;
+                                    li {
+                                        @extend %mt-15;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    &-thumb {
+                        width: 60px;
+                    }
+                    &-content {
+                        h6 {
+                            @include font-size(12px);
+                        }
+                        p {
+                            @extend %mb-0;
+                            @include font-size(12px);
+                        }
+                    }
+                }
+            }
+        }
+    }
+    &__tag {
+        @extend %mb-30;
+        ul {
+            li {
+                a {
+                    background: transparent;
+                    border: 1px solid rgba($title-color, $alpha: .2);
+                }
+            }
+        }
+    }
+    &__catagory {
+        ul {
+            li {
+                &:last-child {
+                    >a {
+                        @extend %border-none;
+                    }
+                }
+                &.open {
+                    >a {
+                        &::after {
+                            transform: rotate(-45deg);
+                        }
+                    }
+                }
+                a {
+                    padding: 10px 0;
+                    @extend %d-block;
+                    border-bottom: 1px solid $border-color;
+                    @include add-prefix(transition, (all .3s ease));
+                    &:hover {
+                        padding-left: 20px;
+                        &::after {
+                            border-color: $theme-color;
+                        }
+                    }
+                    &::after {
+                        @include breakpoint(lg) {
+                            border-color: $title-color;
+                        }
+                    }
+                    i,svg {
+                        @extend %mr-10;
+                    }
+                }
+                ul {
+                    @extend %d-none;
+                }
+            }
+        }
+    }
+}

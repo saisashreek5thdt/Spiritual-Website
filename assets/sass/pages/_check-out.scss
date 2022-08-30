@@ -1,0 +1,118 @@
+// checkout-page
+.checkout-page {
+    .checkout-area-left {
+        h4 {
+            @extend %text-font;
+        }
+    }
+    .checkout-area-right {
+        .car-right-title {
+            h4 {
+                @extend %text-font;
+            }
+        }
+        .car-right-body {}
+        .order-table {
+            .car-right-title {}
+            .car-right-body {
+                .list-product-check {
+                    height: 235px;
+                    overflow-y: auto;
+                    margin-bottom: 20px;
+                    table {
+                        tbody {
+                            tr {
+                                td {
+                                    .table-thumb {
+                                        width: 90px;
+                                        img {
+                                            width: 100%;
+                                        }
+                                    }
+                                    p {
+                                        font-weight: 500;
+                                        color: $title-color;
+                                        &.title {
+                                            font-size: 14px;
+                                        }
+                                        &.quantity {
+                                            span {
+                                                margin-left: 10px;
+                                            }
+                                        }
+                                        &.price {}
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+                ul {
+                    li {
+                        list-style: none;
+                        align-items: center;
+                        justify-content: space-between;
+                        border: 1px solid $border-color;
+                        padding: 8px 20px;
+                        margin-bottom: 15px;
+                        background: $white-color;
+                        @extend %flex;
+                        .pull-right {
+                            margin-bottom: 0;
+                            color: $title-color;
+                        }
+                    }
+                }
+            }
+        }
+        .payment {
+            .car-right-title {}
+            .car-right-body {
+                ul {
+                    li {
+                        .custom-radio {
+                            @extend %flex;
+                            justify-content: space-between;
+                            .custom-control-input {
+                                margin-top: 5px;
+                                width: auto;
+                            }
+                            .custom-control-label {
+                                width: calc(100% - 25px);
+                            }
+                        }
+                    }
+                }
+                p {
+                    &.per-information {
+                        font-size: 1rem;
+                    }
+                }
+                .theme-btn {}
+            }
+        }
+    }
+}
+.bg-title {
+    background: $theme-color;
+}
+input.custom-control-input, input.custom-checkbox {
+    width: auto;
+    height: auto;
+    margin-bottom: 10px;
+}
+
+
+// scrollbar effect
+.list-product-check::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+    background-color: $white-color;
+}
+.list-product-check::-webkit-scrollbar {
+    width: 4px;
+    background-color: $white-color;
+}
+.list-product-check::-webkit-scrollbar-thumb {
+    background-color: $theme-color;
+    border-radius: 8px;
+}

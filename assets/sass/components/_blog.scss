@@ -1,0 +1,376 @@
+.blog {
+    &__left {
+        @extend %p-30;
+        box-shadow: 0 0 5px rgba($title-color, $alpha: .1);
+        @include add-prefix(border-radius, (6px));
+        
+    }
+    &__area {
+        height: 550px;
+        overflow-y: auto;
+
+        &::-webkit-scrollbar-track {
+            -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+            background: $white-color;
+            @include add-prefix(border-radius, (6px));
+        }
+        &::-webkit-scrollbar {
+            width: 6px;
+            background: $white-color;
+        }
+        &::-webkit-scrollbar-thumb {
+            background: $theme-color;
+            @include add-prefix(border-radius, (6px));
+        }
+    }
+    &__right {
+        @extend %p-30;
+        box-shadow: 0 0 5px rgba($title-color, $alpha: .1);
+        @include add-prefix(border-radius, (6px));
+        .section__header {
+            h2 {
+                @include font-size(32px);
+            }
+        }
+    }
+    &__item {
+        &:last-child {
+            .blog {
+                &__inner {
+                    @extend %mb-0;
+                    @extend %border-none;
+                    @extend %pb-0;
+                }
+            }
+        }
+    }
+    &__inner {
+        @extend %flex;
+        @extend %align-items-center;
+        @extend %mb-15;
+        @extend %pb-15;
+        border-bottom: 1px solid $border-color;
+        &:hover {
+            .blog {
+                &__thumb {
+                    img {
+                        @include add-prefix(transform, (scale(1.2)));
+                    }
+                }
+                &__content {
+                    h5 {
+                        color: $theme-color;
+                    }
+                }
+            }
+        }
+    }
+    &__thumb {
+        width: 210px;
+        margin: 0 auto 15px;
+        @extend %of-hidden;
+        @include breakpoint(sm) {
+            margin-bottom: 0;
+        }
+    }
+    &__content {
+        @extend %w-100;
+        @include breakpoint(sm) {
+            width: calc(100% - 210px);
+            padding-left: 30px;
+            
+        }
+        h5 {
+            @extend %text-font;
+            @extend %text-1;
+            @extend %text-capitalize;
+            @extend %mb-15;
+        }
+        &-metapost {
+            @extend %flex;
+            @extend %mb-15;
+            li {
+                @extend %pr-15;
+            }
+        }
+        p {
+            @extend %mb-0;
+        }
+    }
+    &__slider {
+        &-item {
+            @extend %text-center;
+        }
+        &-thumb {
+            @extend %of-hidden;
+            img {
+                @extend %w-100;
+            }
+        }
+        &-content {
+            @extend %p-30;
+            background: $ash-color;
+            h6 {
+                @extend %text-uppercase;
+                @extend %text-1;
+                @extend %text-font;
+            }
+            h5 {
+                @extend %text-font;
+            }
+            .default-btn {
+                @include font-size(13px);
+                line-height: 36px;
+                padding: 0 15px;
+            }
+        }
+        &-rating {
+            @extend %mb-5;
+            i, svg {
+                color: $theme-color;
+            }
+        }
+    }
+    &__pagination {
+        @extend %text-center;
+        @extend %mt-25;
+        .swiper-pagination-bullet {
+            width: 12px;
+            height: 12px;
+            &.swiper-pagination-bullet-active {
+                background: $theme-color;
+            }
+        }
+    }
+    &__comments {
+        @extend %my-30;
+        &-details {
+            >ul>li {
+                &:first-child {
+                    @extend %border-none;
+                }
+            }
+            ul {
+                li {
+                    @extend %flex;
+                    @extend %py-30;
+                    border-top: 1px solid $border-color;
+                    
+                }
+                ul {
+                    @extend %ml-30;
+                    li {
+                        @extend %mt-30;
+                        &:last-child {
+                            @extend %pb-0;
+                        }
+                    }
+                }
+            }
+        }
+        &-thumb {
+            width: 80px;
+        }
+        &-content {
+            width: calc(100% - 80px);
+            @extend %pl-15;
+            h6 {
+                @extend %text-font;
+            }
+            .default-btn {
+                line-height: 25px;
+                padding: 0 15px;
+                border: 2px solid $theme-color2;
+                color: $theme-color2;
+                @include font-size(13px);
+                @extend %text-bold;
+                background: transparent !important;
+                &::before {
+                    background: $theme-color2;
+                }
+                &:hover {
+                    span {
+                        color: $white-color;
+                    }
+                }
+            }
+        }
+    }
+    &__respond {
+        &-title {
+            @extend %mb-15;
+            h4 {
+                @extend %text-uppercase;
+                @include font-size(24px);
+            }
+        }
+        &-details {
+            form {
+                @extend %flex;
+                @extend %justify-between;
+                input {
+                    &[type=checkbox], &[type=radio] {
+                        @extend %d-inline-block;
+                        width: 20px;
+                        height: 20px;
+                        @extend %mb-0;
+                    }
+                }
+                textarea {}
+                p {
+                    @extend %flex;
+                    @extend %align-items-center;
+                    @extend %mb-30;
+                    flex-wrap: nowrap;
+                    input {
+                        @extend %mr-5;
+                    }
+                }
+                
+            }
+        }
+    }
+    &-style2 {
+        .blog {
+            &__item {
+                &:last-child {
+                    .blog {
+                        &__inner {
+                            @extend %mb-0;
+                            @extend %border-none;
+                            @extend %pb-0;
+                        }
+                    }
+                }
+            }
+            &__inner {
+                @extend %flex;
+                @extend %align-items-center;
+                @extend %mb-15;
+                @extend %pb-15;
+                border-bottom: 1px solid $border-color;
+                &:hover {
+                    .blog {
+                        &__thumb {
+                            img {
+                                @include add-prefix(transform, (scale(1.2)));
+                            }
+                        }
+                        &__content {
+                            h5 {
+                                color: $theme-color;
+                            }
+                        }
+                    }
+                }
+            }
+            &__thumb {
+                @extend %w-100;
+            }
+            &__content {
+                @extend %w-100;
+                @extend %py-30;
+                @include breakpoint(sm) {
+                    width: 100%;
+                    padding-left: 0;
+                    
+                }
+                h3 {
+                    @extend %text-font;
+                    @extend %text-2;
+                }
+                h6 {
+                    @extend %text-font;
+                    @extend %text-capitalize;
+
+                }
+                &-metapost {
+                    @extend %flex;
+                    @extend %mb-15;
+                    li {
+                        @extend %pr-15;
+                    }
+                }
+                p {
+                    @extend %mb-30;
+                }
+            }
+        }   
+    }
+    &__tags {
+        @extend %flex;
+        @extend %justify-between;
+        @extend %align-items-center;
+        @extend %w-100;
+        @extend %p-15;
+        background: $ash-color;
+        &-left {
+            @extend %flex;
+            @extend %align-items-center;
+            @extend %mb-10;
+            @include breakpoint(xl) {
+                margin-bottom: 0;
+            }
+            ul {
+                li {
+                    @extend %d-inline-block;
+                    a {
+                        @extend %d-inline-block;
+                        padding: 7px 10px;
+                        @extend %m-5;
+                        background: $white-color;
+                        color: $title-color;
+                        @include add-prefix(border-radius, (3px));
+                        @include font-size(14px);
+                        @extend %text-bold;
+                        &:hover {
+                            background: $theme-color;
+                            color: $white-color;
+                        }
+                    }
+                }
+            }
+        }
+        &-right {
+            @extend %flex;
+        }
+        &-title {
+            @extend %d-inline-block;
+            @extend %mr-5;
+            p {
+                margin-bottom: 0 !important;
+                @extend %text-bold;
+            }
+        }
+    }
+    &-single {
+        .blog {
+            &__inner {
+                &:hover {
+                    .blog {
+                        &__thumb {
+                            img {
+                                @include add-prefix(transform, (scale(1)));
+                            }
+                        }
+                    }
+                }
+            }
+            &__content {
+                h3 {
+                    @extend %text-font;
+                    @extend %text-2;
+                    @extend %mb-30;
+                }
+                h6 {
+                    @extend %text-font;
+                    @extend %text-capitalize;
+
+                }
+                &-metapost {
+                    @extend %mb-20;
+                }
+            }
+        }
+    }
+}

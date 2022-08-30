@@ -1,0 +1,25 @@
+.sponsor {
+    @extend %py-60;
+    &__slider {}
+    &__item {}
+    &__inner {
+        &:hover {
+            .sponsor {
+                &__thumb {
+                    filter: none;
+                    opacity: 1;
+                    -webkit-filter: grayscale(0);
+                }
+            }
+        }
+    }
+    &__thumb {
+        @extend %text-center;
+        filter: gray;
+        opacity: 0.3;
+        filter: grayscale(1);
+        -webkit-filter: grayscale(1);
+        @include add-prefix(transition, (all .3s ease));
+        img {}
+    }
+}

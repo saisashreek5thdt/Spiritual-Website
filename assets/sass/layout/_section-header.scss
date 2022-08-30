@@ -1,0 +1,70 @@
+.section__header {
+    @extend %mb-60;
+    &:hover {
+        h2 {
+            &::after {
+                width: 100px;
+            }
+            &::before {
+                width: 10px;
+                left: 110px;
+            }
+        }
+    }
+    h2 {
+        @extend %p-rel;
+        @extend %mb-40;
+        &::after, &::before {
+            @extend %p-abs;
+            height: 3px;
+            bottom: -20px;
+            @include add-prefix(transition, (all .3s ease))
+        }
+        &::after {
+            width: 10px;
+            left: 0;
+            background: $theme-color;
+        }
+        &::before {
+            width: 100px;
+            left: 20px;
+            background: $ash-color;
+        }
+    }
+    p {
+        @include breakpoint(lg) {
+            max-width: 650px;
+        }
+    }
+    &.text-center {
+        &:hover {
+            h2 {
+                &::after {
+                    width: 10px;
+                    left: calc(50% - -55px);
+                }
+                &::before {
+                    width: 100px;
+                    left: calc(50% - 10px);
+                }
+            }
+        }
+        h2 {
+            &::after {
+                left: calc(50% - -10px);
+                width: 100px;
+                @include add-prefix(transform, (translateX(-50%)));
+            }
+            &::before {
+                left: calc(50% - 55px);
+                width: 10px;
+                @include add-prefix(transform, (translateX(-50%)));
+            }
+        }
+        p {
+            @include breakpoint(lg) {
+                margin: 0 auto;
+            }
+        }
+    }
+}

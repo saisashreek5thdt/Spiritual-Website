@@ -1,0 +1,127 @@
+.shedule {
+    background-blend-mode: overlay;
+    &__top {
+        @extend %flex;
+        background: rgba($white-color, $alpha: .1);
+        border: 2px solid $theme-color;
+        @include add-prefix(border-radius, (4px));
+    }
+    &__item {
+        @extend %w-100;
+        @include breakpoint(sm) {
+            width: calc(100% / 2);
+        }
+    }
+    &__inner {
+        @extend %p-10;
+        @extend %m-10;
+        border: 1px solid rgba($border-color, $alpha: .1);
+        @include add-prefix(border-radius, (4px));
+    }
+    &__content {
+        @extend %flex;
+        @extend %align-items-center;
+        @extend %justify-between;
+    }
+    &__left {}
+    &__title {
+        h6 {
+            color: $white-color;
+            @extend %text-font;
+            @include font-size(20px);
+        }
+        p {
+            @extend %mb-0;
+        }
+    }
+    &__right {}
+    &__time {
+        ul {
+            @extend %flex;
+            li {
+                @extend %flex;
+                @extend %justify-center;
+                flex-direction: column;
+                width: 70px;
+                height: 70px;
+                border: 2px solid $border-color;
+                @extend %text-center;
+                @extend %m-5;
+                @include add-prefix(border-radius, (100%));
+                &:nth-last-of-type(1), &:nth-last-of-type(2) {
+                    @extend %d-none;
+                }
+                span, p {
+                    @extend %d-block;
+                    @extend %w-100;
+                    @extend %mb-0;
+                }
+                span {
+                    color: $theme-color;
+                    @extend %text-bold;
+                    @include font-size(18px);
+                }
+                p {
+                    @extend %title-font;
+                    color: $white-color;
+                }
+            }
+        }
+    }
+    &__sunrise {
+        @extend %flex;
+        @extend %mt-30;
+        &-item {
+            @extend %w-100;
+            @include breakpoint(sm) {
+                width: calc(100% / 2);
+            }
+            &:first-child {
+                .shedule__sunrise {
+                    &-inner {
+                        @extend %mb-25;
+                        @include breakpoint(sm) {
+                            margin-right: 15px;
+                            margin-bottom: 0;
+                        }
+                    }
+                    &-content {
+                        p {
+                            color: $theme-color;
+                        }
+                    }
+                }
+            }
+            &:last-child {
+                .shedule__sunrise-inner {
+                    @include breakpoint(sm) {
+                        margin-left: 15px;
+                    }
+                }
+            }
+        }
+        &-inner {
+            @extend %flex;
+            @extend %justify-evenly;
+            @extend %py-15;
+            @extend %align-items-center;
+            border: 2px solid $theme-color;
+            @include add-prefix(border-radius, (4px));
+        }
+        &-thumb {
+            img {}
+        }
+        &-content {
+            h3 {
+                @extend %text-font;
+                color: $theme-color;
+                @extend %mb-0;
+                @extend %text-uppercase;
+            }
+            p {
+                @extend %mb-0;
+                color: chocolate;
+            }
+        }
+    }
+}

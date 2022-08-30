@@ -1,0 +1,191 @@
+.event {
+    &__item {}
+    &__inner {
+        &:hover {
+            .event__thumb {
+                img {
+                    @include add-prefix(transform, (scale(1.2)));
+                }
+            }
+            .event__content {
+                h5 {
+                    color: $theme-color;
+                }
+            }
+            .event__metapost-count {
+                background: $theme-color;
+                color: $title-color;
+            }
+        }
+    }
+    &__thumb {
+        @extend %p-rel;
+        @extend %of-hidden;
+        &-date {
+            width: 60px;
+            height: 60px;
+            top: 10px;
+            left: 10px;
+            flex-direction: column;
+            border: 2px solid $theme-color;
+            background: rgba($title-color, $alpha: .75);
+            @extend %p-abs;
+            @extend %flex;
+            @extend %text-center;
+            @extend %justify-center;
+            @extend %align-items-center;
+            @include add-prefix(border-radius, (4px));
+            h6 {
+                color: $theme-color;
+                @extend %mb-0;
+                font-family: $text-font;
+            }
+            p {
+                @extend %mb-0;
+                color: $white-color;
+            }
+        }
+        img {
+            @extend %w-100;
+        }
+    }
+    &__content {
+        @extend %pt-20;
+        h5 {
+            @extend %text-font;
+            @extend %text-1;
+        }
+    }
+    &__metapost {
+        @extend %flex;
+        @extend %align-items-center;
+        @extend %justify-between;
+        @extend %mb-20;
+        &-info {
+            width: calc(100% - 60px);
+            li {
+                @extend %py-5;
+                i, svg {
+                    @extend %mr-5;
+                }
+            }
+        }
+        &-comentshare {
+            width: 60px;
+            border-left: 1px solid $border-color;
+            @extend %text-center;
+            li {
+                @extend %py-5;
+            }
+        }
+        &-coment {
+            @extend %p-rel;
+        }
+        &-count {
+            @extend %p-abs;
+            top: 0;
+            right: 0;
+            width: 20px;
+            height: 20px;
+            line-height: 20px;
+            color: $white-color;
+            background: $title-color;
+            @include font-size(9px);
+            @include add-prefix(border-radius, (100%));
+        }
+        &-share {
+            @extend %p-rel;
+            @extend %c-pointer;
+            &:hover {
+                ul {
+                    @include add-prefix(transform, (scaleX(1)));
+                }
+            }
+            ul {
+                @extend %p-abs;
+                @extend %flex;
+                @extend %align-items-center;
+                width: 126px;
+                right: 100%;
+                top: 0;
+                background: $title-color;
+                transform-origin: right;
+                @include add-prefix(transform, (scaleX(0)));
+                @include add-prefix(transition, (all .3s ease));
+                &::after {
+                    @extend %p-abs;
+                    width: 0;
+                    height: 0;
+                    right: -8px;
+                    border-top: 10px solid transparent;
+                    border-left: 10px solid $title-color;
+                    border-bottom: 10px solid transparent;
+                }
+                li {
+                    border-right: 1px solid $border-color;
+                    a {
+                        @extend %px-10;
+                        @extend %py-5;
+                        color: $white-color;
+                        @include font-size(12px);
+                        @extend %d-inline-block;
+                    }
+                }
+            }
+        }
+    }
+    &-single {
+        .event {
+            &__inner {
+                &:hover {
+                    .event {
+                        &__thumb {
+                            img {
+                                @include add-prefix(transform, (scale(1)));
+                            }
+                        }
+                    }
+                }
+            }
+            &__content {
+                h3 {
+                    @extend %text-font;
+                    @extend %text-2;
+                    @extend %mb-20;
+                }
+            }
+            &__metapost {
+                @extend %mb-30;
+                &-info {
+                    @extend %flex;
+                    >li {
+                        @extend %p-0;
+                        @extend %pr-15;
+                        @extend %mr-15;
+                        border-right: 1px solid $border-color;
+                    }
+                }
+                &-share {
+                    ul {
+                        width: 146px;
+                        @include breakpoint(sm) {
+                            transform-origin: left;
+                            left: 100%;
+                            right: auto;
+                        }
+                        &::after {
+                            @include breakpoint(sm) {
+                                right: auto;
+                                left: -8px;
+                                border-left: none;
+                                border-top: 10px solid transparent;
+                                border-right: 10px solid #0d0d0d;
+                                border-bottom: 10px solid transparent;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

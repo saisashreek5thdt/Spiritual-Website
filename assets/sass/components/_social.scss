@@ -1,0 +1,86 @@
+.social {
+    padding: 50px 0;
+    &__area {}
+    &__list {
+        @extend %flex;
+        @extend %justify-center;
+        gap: 15px;
+        li {
+            @extend %mr-15;
+            @extend %pr-15;
+            @extend %p-rel;
+            &::after {
+                @extend %p-abs;
+                width: 1px;
+                height: 100%;
+                background: $border-color;
+                right: 0;
+                top: 0;
+                @include add-prefix(transform, (rotate(15deg)));
+            }
+            &:last-child {
+                &::after {
+                    @extend %d-none;
+                }
+            }
+        }
+        a {
+            @extend %m-5;
+            @include add-prefix(transition, (all .3s ease));
+            i, svg {
+                width: 42px;
+                height: 42px;
+                line-height: 42px;
+                border: 2px solid $border-color;
+                @extend %text-center;
+                @include add-prefix(border-radius, (100%));
+                @include add-prefix(transition, (all .3s ease));
+            }
+            span {
+                @extend %d-inline-block;
+                @extend %ml-10;
+                @extend %text-capitalize;
+            }
+        }
+        &-facebook {
+            &:hover {
+                a {
+                    color: $facebook;
+                    i, svg {
+                        border-color: $facebook;
+                    }
+                }
+            }
+        }
+        &-twitter {
+            &:hover {
+                a {
+                    color: $twitter;
+                    i, svg {
+                        border-color: $twitter;
+                    }
+                }
+            }
+        }
+        &-linkedin {
+            &:hover {
+                a {
+                    color: $linkedin;
+                    i, svg {
+                        border-color: $linkedin;
+                    }
+                }
+            }
+        }
+        &-instagram {
+            &:hover {
+                a {
+                    color: $instagram;
+                    i, svg {
+                        border-color: $instagram;
+                    }
+                }
+            }
+        }
+    }
+}

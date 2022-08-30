@@ -1,0 +1,69 @@
+
+//Qoute section
+.qoute {
+    background-blend-mode: overlay;
+    &__slider {}
+    &__item {}
+    &__inner {
+        @extend %flex;
+        @include breakpoint(max-sm) {
+            justify-content: center;
+        }
+    }
+    &__thumb {
+        width: 200px;
+        height: 200px;
+        @extend %text-center;
+        background: $theme-color;
+        color: $white-color;
+        @extend %p-15;
+        @include add-prefix(border-radius, (100%));
+        @include font-size(30px);
+        @extend %flex;
+        @extend %justify-center;
+        flex-direction: column;
+        @extend %p-rel;
+        margin: 0 auto 15px;
+        @include breakpoint(sm) {
+            margin: 0;
+        }
+        h4 {
+            color: $white-color;
+        }
+        i, svg {
+            @extend %p-abs;
+            width: 30px;
+            height: 30px;
+            line-height: 30px;
+            top: 20px;
+            right: 10px;
+            @extend %text-center;
+            background: $title-color;
+            color: $theme-color;
+            @include font-size(16px);
+            @include add-prefix(border-radius, (100%));
+        }
+
+    }
+    &__content {
+        @extend %w-100;
+        @extend %text-center;
+        @include breakpoint(sm) {
+            width: calc(100% - 200px);
+            padding-left: 30px;
+            text-align: left;
+        }
+        &-blockquote {
+            p {
+                @include font-size(24px);
+                color: $white-color;
+            }
+            h4 {
+                @include font-size(20px);
+                @extend %text-font;
+                @extend %text-regular;
+                color: $white-color;
+            }
+        }
+    }
+}
